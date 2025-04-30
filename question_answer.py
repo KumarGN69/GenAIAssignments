@@ -24,6 +24,7 @@ if __name__ == "__main__":
 
     # create a vector store which store
     local_llm = CustomLLMModel()
+
     vector_store = local_llm.create_vectorstore(input_text=cleaned_docs)
     custom_rag = CustomRAG(model=local_llm)
 
@@ -32,5 +33,6 @@ if __name__ == "__main__":
         query = input("Enter your question (or 'exit' to quit): ")
         if query.lower() == 'exit':
             break
+        # query_embedding = local_llm.create_embedding().embed_query(query)
         response = custom_rag.do_similarity_search(vector_store=vector_store, query=query)
         print(f"Response: {response}")

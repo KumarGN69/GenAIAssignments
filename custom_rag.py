@@ -53,12 +53,13 @@ class CustomRAG:
         # get the Ollama Client interface to the model
         client = self.model.getclientinterface()
 
+
         # generate a llm response using client along with the RAG results
         # print('Invoking the LLM for RAG based response')
         start = time.time()
         generated_content = client.generate(
             model=self.model.MODEL_NAME,
-            prompt=f"Answer the user's query using the context. Context: {doclist}"
+            prompt=f"Summarize a response for user's query using the following context: {doclist}"
         )
         end = time.time()
         # print(f'Time taken to answer the query: {end-start} seconds')
