@@ -3,6 +3,7 @@ __pycache__/
 *.py[cod]
 *$py.class
 .env
+chroma_langchain.db
 # C extensions
 *.so
 

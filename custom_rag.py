@@ -39,7 +39,7 @@ class CustomRAG:
         # model = LLMModel()
 
         # create a retriever from the vector store
-        print('Creating a vector store retriever')
+        # print('Creating a vector store retriever')
 
         retriever = vector_store.as_retriever(
             search_type="similarity",
@@ -54,13 +54,13 @@ class CustomRAG:
         client = self.model.getclientinterface()
 
         # generate a llm response using client along with the RAG results
-        print('Invoking the LLM for RAG based response')
+        # print('Invoking the LLM for RAG based response')
         start = time.time()
         generated_content = client.generate(
             model=self.model.MODEL_NAME,
-            prompt=f"Answer the user's query based on the provided context. Context: {doclist}"
+            prompt=f"Answer the user's query using the context. Context: {doclist}"
         )
         end = time.time()
-        print(f'Time taken to answer the query: {end-start} seconds')
+        # print(f'Time taken to answer the query: {end-start} seconds')
         return generated_content.response
     

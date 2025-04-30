@@ -88,7 +88,7 @@ class CustomLLMModel:
         # print('Done splitting documents list')
 
         # create a persistent Chroma vector store for the list of documents'
-        print('Starting vector store creation')
+        # print('Starting vector store creation')
         vector_store = None
         if os.path.exists("chroma.sqlite3"):
             print("Vector store exists.")
@@ -101,8 +101,8 @@ class CustomLLMModel:
                 persist_directory="./chroma_langchain.db"
             )
             end = time.time()
-            print(f'Time taken to embed and create a vector store: {end-start} seconds')
-        print('Done vector store creation')
+        #     print(f'Time taken to embed and create a vector store: {end-start} seconds')
+        # print('Done vector store creation')
         return vector_store # returns the vector store handle
     def getclientinterface(self)->Client:
         """
