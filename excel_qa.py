@@ -3,7 +3,19 @@ import pandas as pd
 from custom_llm import CustomLLMModel
 from custom_rag import CustomRAG
 from langchain_community.document_loaders import UnstructuredExcelLoader
+from langchain.schema import  Document
 
+def load_excel_with_all_tabs(file_list):
+    documents = []
+    for file in file_list:
+        xls = pd.ExcelFile(file)
+        for sheet in xls.sheet_names:
+            df = xls.parse(sheet)
+            for id, row in df.iterrows():
+                row_text = ", ".join(f"{col}: {row[col]}" for col in df.columns if pd.notna(row[col]))
+                metadata = {"source": file, "sheet": sheet, "row": id}
+                documents.append(Document(page_content=row_text, metadata=metadata))
+    return documents
 
 def load_excel_docs(files_list):
     docs = []
@@ -25,15 +37,16 @@ def clean_text(text):
     return text
 
 if __name__ == "__main__":
-    #load the excel files and clean the contents
-    documents = load_excel_docs(["./Inputs/ProjectA.xlsx"])
+    #load the Excel files and clean the contents
+    file_list =["./Inputs/ProjectA.xlsx"]
+    documents = load_excel_with_all_tabs(file_list)
     cleaned_docs = [clean_text(doc.page_content) for doc in documents]
 
     # Instantiate an LLM create a vector store to create the embeddings and store in Chroma vector DB
     local_llm = CustomLLMModel()
     vector_store = local_llm.create_vectorstore(input_text=cleaned_docs)
 
-    #create the an instance of RAG class
+    #create an instance of RAG class
     custom_rag = CustomRAG(model=local_llm)
 
     # Get the search query and respond to the questions
