@@ -18,3 +18,9 @@ Question&Answering using RAG Embedding and LLMs
         2. Used multi-layer NeuralNetworks based regression model for predictions
         3. Model accuracy needs to be improved
         4. Saved the trained model and weights into json and h5 formats for reused
+    loan_approval.py
+        1. Used KNNClassifier
+        2. Used data set from Kaggle.com
+        3. Used GridSearchCV for hyperparameter tuning
+        4. Model accuracy needs to be improved
+        5. 
