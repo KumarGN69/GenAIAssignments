@@ -26,7 +26,7 @@ def clean_text(text):
 
 if __name__ == "__main__":
     #load the excel files and clean the contents
-    documents = load_excel_docs(["ProjectA.xlsx"])
+    documents = load_excel_docs(["./Inputs/ProjectA.xlsx"])
     cleaned_docs = [clean_text(doc.page_content) for doc in documents]
 
     # Instantiate an LLM create a vector store to create the embeddings and store in Chroma vector DB
