@@ -11,3 +11,5 @@ unstructured[all-docs]~=0.17.2
 keras~=3.9.2
 scikit-learn~=1.6.1
 tensorflow~=2.19.0
+gTTS~=2.5.4
+pygame~=2.6.1
