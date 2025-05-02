@@ -23,4 +23,11 @@ Question&Answering using RAG Embedding and LLMs
         2. Used data set from Kaggle.com
         3. Used GridSearchCV for hyperparameter tuning
         4. Model accuracy needs to be improved
-        5. 
+    generate_play_audio.py
+        1. Ollama based llama3.2 to generate text based on the input theme
+        2. Used gTTS for text to speech conversion
+        3. Used pygame for playing the audio
+    audio_text_generate.py
+        1. Used OpenAI-Whisper to convert audio to text
+        2. Used Ollama with llama3.2 running locally to generate panels that can be used to generate a comic strips
+
