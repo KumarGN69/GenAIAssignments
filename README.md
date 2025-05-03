@@ -30,4 +30,8 @@ Question&Answering using RAG Embedding and LLMs
     audio_text_generate.py
         1. Used OpenAI-Whisper to convert audio to text
         2. Used Ollama with llama3.2 running locally to generate panels that can be used to generate a comic strips
+    tree_of_thoughts.py
+        1. Used mistral:latest and llama3.2 instead of gemini and openai using Ollama locally on my laptop
+        2. Prompted the user to enter their thoughts to brainstorm
+        3. Generated a markdown file with the ideas and expanded thoughts with reasoning
 
