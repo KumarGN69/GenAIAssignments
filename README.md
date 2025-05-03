@@ -34,4 +34,9 @@ Question&Answering using RAG Embedding and LLMs
         1. Used mistral:latest and llama3.2 instead of gemini and openai using Ollama locally on my laptop
         2. Prompted the user to enter their thoughts to brainstorm
         3. Generated a markdown file with the ideas and expanded thoughts with reasoning
+    find_word_embedding.py
+        1. used python library to download a specific word embedding model
+        2. Prompted the user to enter the word
+        3. Searched the downloaded model for the entered word
+        4. If available in corpus printed the embedding else printed that word is not found
 
