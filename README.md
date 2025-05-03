@@ -1,5 +1,4 @@
 # GenAIAssignments
-Question&Answering using RAG Embedding and LLMs
     custom_llm.py
         1. Custom local llm using Ollam and mistral model
     custom_rag.py
