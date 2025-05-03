@@ -8,6 +8,7 @@ chroma_langchain.db
 *.so
 models/
 *.png
+TreeOfThoughts.md
 # Distribution / packaging
 .Python
 build/
